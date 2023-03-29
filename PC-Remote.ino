@@ -48,6 +48,11 @@ const IRCodeMap IR_CODE_MAP[] = {
   {0x4B9A, 0xe8},  // {IR_CODE_PLAY, KEY_PLAYPAUSE}
   {0x4B98, 0x78}  // {IR_CODE_STOP, KEY_STOP}
 };
+
+// Debounce delay to fix repeatition of same ir codes
+// Change the debounceDelay variable time (in ms) as needed
+const int debounceDelay = 170;
+
 const int IR_CODE_MAP_SIZE = sizeof(IR_CODE_MAP) / sizeof(IRCodeMap);
 
 // Define keyboard report buffer
@@ -87,5 +92,8 @@ void sendKeypress(uint8_t keyCode) {
   // Release the keypress
   keyboardReport[2] = 0;
   Serial.write(keyboardReport, 8);
+
+  // Debounce delay to fix repeatition of same ir codes
+  delay (debounceDelay);
 }
 
