@@ -34,19 +34,23 @@ const IRCodeMap IR_CODE_MAP[] = {
   //{0x1837, 0x19}   // {IR_CODE_CBC, KEY_V}
 
   // Sony Remote
-  {0x92, 0x80},  // {IR_CODE_VOLUME_PLUS, KEY_VOLUME_UP}
-  {0x93, 0x81},  // {IR_CODE_VOLUME_MINUS, KEY_VOLUME_DOWN}
-  {0x94, 0x7F},  // {IR_CODE_MUTE, KEY_MUTE}
-  {0xF4, 0x52},  // {IR_CODE_UP, KEY_UP_ARROW}
-  {0xF5, 0x51},  // {IR_CODE_DOWN, KEY_DOWN_ARROW}  
-  {0xB4, 0x50},  // {IR_CODE_LEFT, KEY_LEFT_ARROW}
-  {0xB3, 0x4f},  // {IR_CODE_RIGHT, KEY_RIGHT_ARROW}
-  {0xE5, 0x28},  // {IR_CODE_OK, KEY_ENTER}
-  {0x4BA3, 0x2a},  // {IR_CODE_RETURN, KEY_BACKSPACE}
-  {0x4BA8, 0x19}, // {IR_CODE_SUBTITLE, KEY_V}
-  {0x4B99, 0xe8},  // {IR_CODE_PAUSE, KEY_PLAYPAUSE}
-  {0x4B9A, 0xe8},  // {IR_CODE_PLAY, KEY_PLAYPAUSE}
-  {0x4B98, 0x78}  // {IR_CODE_STOP, KEY_STOP}
+  {0x92, 0x80},  // {VOLUME_PLUS, KEY_VOLUME_UP}
+  {0x93, 0x81},  // {VOLUME_MINUS, KEY_VOLUME_DOWN}
+  {0x94, 0x7F},  // {MUTE, KEY_MUTE}
+  {0xF4, 0x52},  // {UP, KEY_UP_ARROW}
+  {0xF5, 0x51},  // {DOWN, KEY_DOWN_ARROW}  
+  {0xB4, 0x50},  // {LEFT, KEY_LEFT_ARROW}
+  {0xB3, 0x4f},  // {RIGHT, KEY_RIGHT_ARROW}
+  {0xE5, 0x2c},  // {OK, KEY_SPACE}
+  {0x4BA3, 0x2a},  // {RETURN, KEY_BACKSPACE}
+  {0x4BA8, 0x19},  // {SUBTITLE, KEY_V}
+  {0x4B99, 0xe8},  // {PAUSE, KEY_MEDIA_PLAYPAUSE}
+  {0x4B9A, 0xe8},  // {PLAY, KEY_MEDIA_PLAYPAUSE}
+  {0x4B98, 0xf3},  // {STOP, KEY_MEDIA_STOP}
+  {0x4B9B, 0xf1},  // {BACKWARD, KEY_MEDIA_BACKWARD}
+  {0x4B9C, 0xf2},  // {FORWARD, KEY_MEDIA_FORWARD}
+  {0x4BBC, 0xea},  // {PREVIOUS, KEY_MEDIA_PREVIOUS}
+  {0x4BBD, 0xeb}   // {NEXT, KEY_MEDIA_NEXT}
 };
 
 // Debounce delay to fix repeatition of same ir codes
