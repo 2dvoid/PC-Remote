@@ -16,20 +16,37 @@ struct IRCodeMap {
 const IRCodeMap IR_CODE_MAP[] = {
   // Add IR code and it's corresponding Key code in here. Structure:  {IR_CODE, KEY_CODE} .
   // You won't have to change anything in the code.
-  {0x1020, 0x80},  // {IR_CODE_VOLUME_UP, KEY_VOLUME_UP}
-  {0x1820, 0x80},  // {IR_CODE_VOLUME_UP, KEY_VOLUME_UP}
-  {0x1021, 0x81},  // {IR_CODE_VOLUME_DOWN, KEY_VOLUME_DOWN}
-  {0x1821, 0x81},  // {IR_CODE_VOLUME_DOWN, KEY_VOLUME_DOWN}
-  {0x100D, 0x7F},  // {IR_CODE_MUTE, KEY_MUTE}
-  {0x180D, 0x7F},  // {IR_CODE_MUTE, KEY_MUTE}
-  {0x1026, 0x50},  // {IR_CODE_SLEEP, KEY_LEFT_ARROW}
-  {0x1826, 0x50},  // {IR_CODE_SLEEP, KEY_LEFT_ARROW}
-  {0x103B, 0x4f},  // {IR_CODE_MENU, KEY_RIGHT_ARROW}
-  {0x183B, 0x4f},  // {IR_CODE_MENU, KEY_RIGHT_ARROW}
-  {0x1025, 0x2c},  // {IR_CODE_OK, KEY_SPACE}
-  {0x1825, 0x2c},  // {IR_CODE_OK, KEY_SPACE}
-  {0x1037, 0x19},  // {IR_CODE_CBC, KEY_V}
-  {0x1837, 0x19}   // {IR_CODE_CBC, KEY_V}
+
+  // Chinese Remote
+  //{0x1020, 0x80},  // {IR_CODE_VOLUME_UP, KEY_VOLUME_UP}
+  //{0x1820, 0x80},  // {IR_CODE_VOLUME_UP, KEY_VOLUME_UP}
+  //{0x1021, 0x81},  // {IR_CODE_VOLUME_DOWN, KEY_VOLUME_DOWN}
+  //{0x1821, 0x81},  // {IR_CODE_VOLUME_DOWN, KEY_VOLUME_DOWN}
+  //{0x100D, 0x7F},  // {IR_CODE_MUTE, KEY_MUTE}
+  //{0x180D, 0x7F},  // {IR_CODE_MUTE, KEY_MUTE}
+  //{0x1026, 0x50},  // {IR_CODE_SLEEP, KEY_LEFT_ARROW}
+  //{0x1826, 0x50},  // {IR_CODE_SLEEP, KEY_LEFT_ARROW}
+  //{0x103B, 0x4f},  // {IR_CODE_MENU, KEY_RIGHT_ARROW}
+  //{0x183B, 0x4f},  // {IR_CODE_MENU, KEY_RIGHT_ARROW}
+  //{0x1025, 0x2c},  // {IR_CODE_OK, KEY_SPACE}
+  //{0x1825, 0x2c},  // {IR_CODE_OK, KEY_SPACE}
+  //{0x1037, 0x19},  // {IR_CODE_CBC, KEY_V}
+  //{0x1837, 0x19}   // {IR_CODE_CBC, KEY_V}
+
+  // Sony Remote
+  {0x92, 0x80},  // {IR_CODE_VOLUME_PLUS, KEY_VOLUME_UP}
+  {0x93, 0x81},  // {IR_CODE_VOLUME_MINUS, KEY_VOLUME_DOWN}
+  {0x94, 0x7F},  // {IR_CODE_MUTE, KEY_MUTE}
+  {0xF4, 0x52},  // {IR_CODE_UP, KEY_UP_ARROW}
+  {0xF5, 0x51},  // {IR_CODE_DOWN, KEY_DOWN_ARROW}  
+  {0xB4, 0x50},  // {IR_CODE_LEFT, KEY_LEFT_ARROW}
+  {0xB3, 0x4f},  // {IR_CODE_RIGHT, KEY_RIGHT_ARROW}
+  {0xE5, 0x28},  // {IR_CODE_OK, KEY_ENTER}
+  {0x4BA3, 0x2a},  // {IR_CODE_RETURN, KEY_BACKSPACE}
+  {0x4BA8, 0x19}, // {IR_CODE_SUBTITLE, KEY_V}
+  {0x4B99, 0xe8},  // {IR_CODE_PAUSE, KEY_PLAYPAUSE}
+  {0x4B9A, 0xe8},  // {IR_CODE_PLAY, KEY_PLAYPAUSE}
+  {0x4B98, 0x78}  // {IR_CODE_STOP, KEY_STOP}
 };
 const int IR_CODE_MAP_SIZE = sizeof(IR_CODE_MAP) / sizeof(IRCodeMap);
 
