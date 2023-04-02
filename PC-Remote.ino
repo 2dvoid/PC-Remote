@@ -52,6 +52,15 @@ const IRCodeMap IR_CODE_MAP[] = {
   {0x4BBC, 0xea},  // {PREVIOUS, KEY_MEDIA_PREVIOUS}
   {0x4BBD, 0xeb}   // {NEXT, KEY_MEDIA_NEXT}
 };
+
+// Delay is used to fix repeatition of same ir codes
+// Change the delay time (in ms) as needed
+const int IR_CODE_DELAY = 170;
+
+// Last ir code and the time it was recieved. Used for checking repeatition
+uint32_t lastIrCode = 0;
+unsigned long lastIrTime = 0;
+
 const int IR_CODE_MAP_SIZE = sizeof(IR_CODE_MAP) / sizeof(IRCodeMap);
 
 // Define keyboard report buffer
@@ -68,9 +77,18 @@ void loop() {
   if (IrReceiver.decode()) {
     // Check the received IR code and map it to a keyboard keypress using the lookup table
     uint32_t irCode = IrReceiver.decodedIRData.decodedRawData;
+
+    if (irCode == lastIrCode && (millis() - lastIrTime) < IR_CODE_DELAY) {
+      // Same code received within IR_CODE_DELAY time, ignore it
+      IrReceiver.resume();
+      return;
+    }    
+
     for (int i = 0; i < IR_CODE_MAP_SIZE; i++) {
       if (irCode == IR_CODE_MAP[i].irCode) {
         sendKeypress(IR_CODE_MAP[i].keyCode);
+	lastIrCode = irCode;
+	lastIrTime = millis();
         break;
       }
     }
